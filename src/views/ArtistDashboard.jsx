@@ -1,22 +1,16 @@
 import Navbar from "../components/Navbar"
-import supabase from "../supabaseClient"
+import Topbar from "../components/Topbar"
 
 const ArtistDashboard = () => {
 
-  function handleLogout() {
-    async function handleLogout() {
-      const { } = await supabase.auth.signOut()
-      window.location.reload()
-    }
-    handleLogout()
-  }
-
   return (
-    <div>
+    <>
+    <Topbar/>
+    <div className="flex flex-col md:flex-row-reverse">
+      <div className="flex justify-center items-center h-screen w-screen bg-slate-200">Here will be all the dashboard stuff</div>
       <Navbar/>
-      <h1>Hello Artist</h1>
-      <button onClick={handleLogout}>Log out</button>
     </div>
+    </>
   )
 }
 

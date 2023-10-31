@@ -31,8 +31,6 @@ async function handleSubmit(e) {
     password: formData.password,
   })
 
-  console.log(formData)
-
   navigate('/')
 }
 
@@ -50,9 +48,9 @@ function handleChange(e) {
       <h2 className="text-4xl text-white font-bold">Create Account</h2>
       <form onSubmit={handleSubmit} className="w-5/6 flex flex-col bg-slate-600 px-4 py-8 rounded-xl text-white text-xl font-bold gap-2">
         <input type="radio" name="account_type" id="fan_account" value="fan" onChange={handleChange}></input>
-        <label for="fan_account">I'm a fan</label>
+        <label htmlFor="fan_account">I'm a fan</label>
         <input type="radio" name="account_type" id="artist_account" value="artist" onChange={handleChange}></input>
-        <label for="artist_account">I'm an artist</label>
+        <label htmlFor="artist_account">I'm an artist</label>
         <label>Name</label>
         <input type="text" placeholder="Name" name="name" onChange={handleChange}></input>
         <label>E-mail</label>
