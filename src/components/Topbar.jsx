@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import supabase from "../supabaseClient"
 
 const Topbar = () => {
@@ -10,10 +11,13 @@ const Topbar = () => {
         handleLogout()
       }
   return (
-    <div className="absolute top-0 w-screen h-16 flex justify-between bg-slate-400">
+    <div className="w-screen px-4 h-16 flex justify-between items-center bg-slate-400">
         <h2>Hello user!</h2>
-        <div>User Avatar</div>
-        <button onClick={handleLogout}>Log out</button>
+        <div className="flex items-center gap-4">
+          <div>User Avatar</div>
+          <button onClick={handleLogout}>Log out</button>
+          <Link to="edit-profile">Edit Profile</Link>
+        </div>
     </div>
   )
 }

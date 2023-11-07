@@ -9,12 +9,29 @@ import ErrorPage from './views/ErrorPage.jsx';
 import Login from './views/Login.jsx';
 import Register from './views/Register.jsx';
 import './index.css'
+import AddAlbum from './components/AddAlbum.jsx';
+import Dashboard from './components/Dashboard.jsx';
+import EditProfile from './components/EditProfile.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "edit-profile",
+        element: <EditProfile />,
+      },
+      {
+        path: "add-album",
+        element: <AddAlbum />,
+      },
+    ],
   },
   {
     path: "login",
